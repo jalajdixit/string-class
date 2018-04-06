@@ -1,1 +1,2 @@
-# string-class
+#string-class
+Implementing our own String Class in C++
