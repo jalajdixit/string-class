@@ -55,10 +55,60 @@ class my_string
 	void change() { str[0] = 'X'; }
 
 /*===============================================================*/
+	bool operator == (const my_string &t2)
+	{
+		if(! strcmp(str,t2.str))
+			return true;
+		else
+			return false;
+	}
+	bool operator != (const my_string &t2)
+	{
+		if(strcmp(str,t2.str))
+			return true;
+		else
+			return false;
+	}
+	bool operator > (const my_string &t2)
+	{
+		if(strcmp(str,t2.str)>0)
+			return true;
+		else
+			return false;
+	}
+	bool operator >= (const my_string &t2)
+	{
+		if(strcmp(str,t2.str)>0)
+			return true;
+		else if(! strcmp(str,t2.str))
+			return true;
+		else
+			return false;
+	}
+	bool operator < (const my_string &t2)
+	{
+		if(strcmp(str,t2.str)<0)
+			return true;
+		else
+			return false;
+	}
+	bool operator <= (const my_string &t2)
+	{
+		if(strcmp(str,t2.str)<0)
+			return true;
+		else if(! strcmp(str,t2.str))
+			return true;
+		else
+			return false;
+	}
+/*===============================================================*/
 friend my_string operator + (const my_string &t1, const my_string &t2);
 friend my_string operator + (const my_string &t1, const char *s);
 friend my_string operator + (const char *s, const my_string &t2);
 };
+/* = = = = = = = = = = = = = = = = = = = = = = */
+
+
 /* = = = = = = = = = = = = = = = = = = = = = = */
 
 my_string operator + (const my_string &t1, const my_string &t2)
@@ -92,15 +142,21 @@ my_string operator + (const char *s, const my_string &t2)
 /* = = = = = = = = = = = = = = = = = = = = = = */
 int main()
 {
-	my_string obj1("Bangalore"),obj2="Vector";
-	my_string obj3;
-
-	obj3 = obj1+obj2;
-	obj1 = obj1 + " jalaj";
-	obj2 = "INDIA " + obj2;
-	obj1.print();
-	obj2.print();
-	obj3.print();
- 
+	my_string s1("jalaj"),s2="dixit";
+	cout << "- - - - - - - - - - - - - " << endl;
+	s1.print();
+        s2.print();
+	if(s1==s2)
+		cout << " == " << endl;
+	if(s1!=s2)
+		cout << " != " << endl;
+	if(s1>s2)
+		cout << "  > " << endl;
+	if(s1>=s2)
+		cout << " >= " << endl;
+	if(s1<s2)
+		cout << "  < " << endl;
+	if(s1<=s2)
+		cout << " <= " << endl;
 	return 0;
 }
