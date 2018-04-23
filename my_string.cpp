@@ -53,6 +53,7 @@ class my_string
 	
 	void print() { cout << str << " - " << len << endl; }
 	void change() { str[0] = 'X'; }
+	int length() { return len; }
 
 /*===============================================================*/
 	bool operator == (const my_string &t2)
